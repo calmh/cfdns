@@ -31,6 +31,10 @@ type DNSRecord struct {
 	Data      interface{} `json:"data,omitempty"`
 }
 
+func (r DNSRecord) String() string {
+	return r.Name + " " + r.Type + " " + r.Content
+}
+
 type cfDNSResult struct {
 	Result []DNSRecord
 }
